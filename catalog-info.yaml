@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ac09mm982-python-gitops
+  description: This is GitOps manifest for ac09mm982-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: ac09mm982-python
+    backstage.io/kubernetes-id: ac09mm982-python 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: ac09mm982-python-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ac09mm982-python
